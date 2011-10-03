@@ -1,0 +1,29 @@
+name: SwitchType
+main: switchtype.SwitchType
+version: 0.1
+commands:
+  lava:
+    description: transforms stationary lava to flowing lava and vice versa
+    usage: /lava
+  water:
+    description: transforms stationary water to flowing water and vice versa
+    usage: /water
+  coal:
+    description: transforms coal to charcoal and vice versa
+    usage: /coal
+permissions:
+  switchtype.*:
+    description: Use all the switch type commands
+    children:
+      switchtype.lava: true
+      switchtype.water: true
+      switchtype.coal: true
+  switchtype.lava:
+    descpription: Allows the use of /lava 
+    default: true
+  switchtype.water:
+    descpription: Allows the use of /water
+    default: true
+  switchtype.coal:
+    description: Allows the use of /coal
+    default: true
