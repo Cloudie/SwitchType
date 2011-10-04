@@ -34,7 +34,7 @@ public class CoalCommandExecutor implements CommandExecutor{
         }
         
         if(!(player.getItemInHand().getType()==Material.COAL)){
-            player.sendMessage("You need to have coal or charcoal in your hand!");
+            player.sendMessage(ChatColor.RED + "You need to have coal or charcoal in your hand!");
             return true;
         }
         
@@ -43,14 +43,14 @@ public class CoalCommandExecutor implements CommandExecutor{
         if(((Coal) coalStack.getData()).getType() == CoalType.COAL){
             coalStack = new ItemStack(Material.COAL, coalStack.getAmount(),(short) 0, CoalType.CHARCOAL.getData());
             player.setItemInHand(coalStack);
-            player.sendMessage("Your coal is now charcoal.");
+            player.sendMessage(ChatColor.GOLD + "Your coal is now charcoal.");
             return true;
         }
         else{
             if(((Coal) coalStack.getData()).getType() == CoalType.CHARCOAL){
                 coalStack = new ItemStack(Material.COAL, coalStack.getAmount(),(short) 0, CoalType.COAL.getData());
                 player.setItemInHand(coalStack);
-                player.sendMessage("Your charcoal is now coal.");
+                player.sendMessage(ChatColor.GOLD + "Your charcoal is now coal.");
                 return true;
             }
         }

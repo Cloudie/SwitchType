@@ -3,7 +3,6 @@ package switchtype;
 
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.util.config.Configuration;
 
 public class SwitchType extends JavaPlugin{
     
@@ -11,7 +10,6 @@ public class SwitchType extends JavaPlugin{
     private LavaCommandExecutor lava;
     private WaterCommandExecutor water;
     private CoalCommandExecutor coal;
-    protected static Configuration config;
     
     @Override
     public void onDisable() {

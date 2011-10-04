@@ -34,7 +34,7 @@ public class LavaCommandExecutor implements CommandExecutor{
         Material mat = player.getItemInHand().getType();
         
         if(!(mat== Material.LAVA || mat == Material.STATIONARY_LAVA)){
-            player.sendMessage("You need to have lava or stationary lava in your hand!");
+            player.sendMessage(ChatColor.RED + "You need to have lava or stationary lava in your hand!");
             return true;
         }
         
@@ -44,7 +44,7 @@ public class LavaCommandExecutor implements CommandExecutor{
             int amount = lavaStack.getAmount();
             lavaStack = new ItemStack(11, amount);
             player.setItemInHand(lavaStack);
-            player.sendMessage("Your lava is now stationary lava.");
+            player.sendMessage(ChatColor.GOLD + "Your lava is now stationary lava.");
             return true;
         }
         else{
@@ -52,7 +52,7 @@ public class LavaCommandExecutor implements CommandExecutor{
                 int amount = lavaStack.getAmount();
                 lavaStack = new ItemStack(10, amount);
                 player.setItemInHand(lavaStack);
-                player.sendMessage("Your stationary lava is now lava.");
+                player.sendMessage(ChatColor.GOLD + "Your stationary lava is now lava.");
                 return true;
             }
         }

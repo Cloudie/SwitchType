@@ -34,7 +34,7 @@ public class WaterCommandExecutor implements CommandExecutor{
         Material mat = player.getItemInHand().getType();
         
         if(!(mat==Material.WATER || mat==Material.STATIONARY_WATER)){
-            player.sendMessage("You need to have water or stationary water in your hand!");
+            player.sendMessage(ChatColor.RED + "You need to have water or stationary water in your hand!");
             return true;
         }
         
@@ -44,7 +44,7 @@ public class WaterCommandExecutor implements CommandExecutor{
             int amount = waterStack.getAmount();
             waterStack = new ItemStack(9, amount);
             player.setItemInHand(waterStack);
-            player.sendMessage("Your water is now stationary water.");
+            player.sendMessage(ChatColor.GOLD + "Your water is now stationary water.");
             return true;
         }
         else{
@@ -52,7 +52,7 @@ public class WaterCommandExecutor implements CommandExecutor{
                 int amount = waterStack.getAmount();
                 waterStack = new ItemStack(8, amount);
                 player.setItemInHand(waterStack);
-                player.sendMessage("Your stationary water is now water.");
+                player.sendMessage(ChatColor.GOLD + "Your stationary water is now water.");
                 return true;
             }
         }
